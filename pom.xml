@@ -8,9 +8,9 @@
         <version>3.5.3</version>
         <relativePath/>
     </parent>
-    <groupId>com.canach</groupId>
+    <groupId>com.canach09</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.0-SNAPSHOT01</version>
+    <version>v1.0.1</version>
     <name>common-utils</name>
     <description>common utils</description>
     <developers>
