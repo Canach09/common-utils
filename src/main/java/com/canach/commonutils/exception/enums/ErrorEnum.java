@@ -13,6 +13,7 @@ public enum ErrorEnum {
     RESOURCE_NOT_FOUND("%s with %s not found"),
     UNAUTHORIZED("Unauthorized"),
     INVALID_INPUT("invalid input: '%s'"),
+    BUSINESS_ERROR("business error: '%s'"),
     METHOD_NOT_SUPPORTED("method not supported");
 
     private final String description;
