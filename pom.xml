@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.canach</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT01</version>
     <name>common-utils</name>
     <description>common utils</description>
     <developers>
