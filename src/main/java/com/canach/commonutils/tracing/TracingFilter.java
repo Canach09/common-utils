@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 
-@Component
-@Order(1)
+//@Component
+//@Order(1)
 @Slf4j
 public class TracingFilter implements Filter {
 
