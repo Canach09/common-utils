@@ -13,7 +13,7 @@ import io.opentelemetry.api.trace.Tracer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.BadCredentialsException;
+//import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -48,11 +48,13 @@ public abstract class CommonManager {
 //            statusCode = HttpStatus.BAD_REQUEST.value();
 //        } else
 
-        if (exc instanceof BadCredentialsException bce) {
-            errorResponse = new ErrorResponse(ErrorEnum.INVALID_CREDENTIALS.name(),
-                    bce.getMessage(), ErrorCategoryEnum.AUTHORIZATION);
-            statusCode = HttpStatus.UNAUTHORIZED.value();
-        } else if (exc instanceof InternalApiException iae) {
+//        if (exc instanceof BadCredentialsException bce) {
+//            errorResponse = new ErrorResponse(ErrorEnum.INVALID_CREDENTIALS.name(),
+//                    bce.getMessage(), ErrorCategoryEnum.AUTHORIZATION);
+//            statusCode = HttpStatus.UNAUTHORIZED.value();
+//        } else
+
+            if (exc instanceof InternalApiException iae) {
             errorResponse = iae.getErrorResponse();
             statusCode = HttpStatus.BAD_REQUEST.value();
         } else if (exc instanceof ResourceNotFoundException rnf) {
