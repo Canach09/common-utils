@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.canach09</groupId>
     <artifactId>common-utils</artifactId>
-    <version>v1.0.6</version>
+    <version>v1.0.7</version>
     <name>common-utils</name>
     <description>common utils</description>
 <!--    <packaging>jar</packaging>-->
@@ -59,18 +59,18 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
-<!--                <configuration>-->
-<!--                    <source>${java.version}</source>-->
-<!--                    <target>${java.version}</target>-->
-<!--                    <compilerArgs>-->
-<!--                        <arg>-parameters</arg>-->
-<!--                    </compilerArgs>-->
-<!--                </configuration>-->
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>3.10.1</version>-->
+<!--&lt;!&ndash;                <configuration>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <source>${java.version}</source>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <target>${java.version}</target>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <compilerArgs>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <arg>-parameters</arg>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </compilerArgs>&ndash;&gt;-->
+<!--&lt;!&ndash;                </configuration>&ndash;&gt;-->
+<!--            </plugin>-->
 <!--            <plugin>-->
 <!--                <groupId>org.apache.maven.plugins</groupId>-->
 <!--                <artifactId>maven-compiler-plugin</artifactId>-->
