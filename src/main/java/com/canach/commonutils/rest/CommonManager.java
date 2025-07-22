@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 
-@Service
+//@Service
 @Slf4j
 public abstract class CommonManager {
 
