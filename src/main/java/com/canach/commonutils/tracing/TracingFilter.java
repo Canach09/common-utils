@@ -4,10 +4,9 @@ import io.opentelemetry.api.trace.Span;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
-import org.jboss.logging.MDC;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-
+import org.slf4j.MDC;
 import java.io.IOException;
 
 @Component
