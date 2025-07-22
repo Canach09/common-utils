@@ -1,4 +1,4 @@
-//package com.canach.commonutils.rest;
-//
-//public class RestUtils {
-//}
+package com.canach.commonutils.rest;
+
+public class RestUtils {
+}

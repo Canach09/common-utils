@@ -122,7 +122,6 @@ public final class TracingUtils {
         logAndTrace(LogLevel.TRACE, message);
     }
 
-    // Utility methods with exception handling
     public static void error(String message, Throwable throwable) {
         Span currentSpan = Span.current();
         if (currentSpan.isRecording()) {

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.canach09</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.15</version>
+    <version>1.0.16</version>
     <name>common-utils</name>
     <description>common utils</description>
     <developers>
@@ -52,17 +52,6 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ========== DEPENDENCIAS OPCIONALES (SOLO SI EL PROYECTO LAS NECESITA) ========== -->
-
-        <!-- OpenTelemetry - OPCIONAL -->
-        <dependency>
-            <groupId>io.opentelemetry</groupId>
-            <artifactId>opentelemetry-api</artifactId>
-            <scope>provided</scope>
-            <optional>true</optional>
-        </dependency>
-
-        <!-- Anotaciones de instrumentación OpenTelemetry - OPCIONAL -->
         <dependency>
             <groupId>io.opentelemetry.instrumentation</groupId>
             <artifactId>opentelemetry-instrumentation-annotations</artifactId>
