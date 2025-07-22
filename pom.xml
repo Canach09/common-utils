@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.canach09</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.13</version>
+    <version>1.0.14</version>
     <name>common-utils</name>
     <description>common utils</description>
     <developers>
@@ -29,12 +29,6 @@
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <otel.version>2.17.1</otel.version>
     </properties>
-    <!--    <parent>-->
-    <!--        <groupId>org.springframework.boot</groupId>-->
-    <!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-    <!--        <version>3.5.3</version>-->
-    <!--        <relativePath/>-->
-    <!--    </parent>-->
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -93,14 +87,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Spring Boot OAuth2 Authorization Server - OPCIONAL -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>-->
-<!--            <scope>provided</scope>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
-
         <!-- Spring Boot Configuration Processor - OPCIONAL -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
@@ -124,19 +110,6 @@
             <scope>provided</scope>
             <optional>true</optional>
         </dependency>
-
-        <!-- ========== DEPENDENCIAS DE TEST ========== -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.junit.jupiter</groupId>-->
-<!--            <artifactId>junit-jupiter</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -212,40 +185,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <!-- Perfiles para diferentes entornos -->
-<!--    <profiles>-->
-<!--        &lt;!&ndash; Perfil para desarrollo &ndash;&gt;-->
-<!--        <profile>-->
-<!--            <id>dev</id>-->
-<!--            <activation>-->
-<!--                <activeByDefault>true</activeByDefault>-->
-<!--            </activation>-->
-<!--        </profile>-->
-
-<!--        &lt;!&ndash; Perfil para publicación &ndash;&gt;-->
-<!--        <profile>-->
-<!--            <id>release</id>-->
-<!--            <build>-->
-<!--                <plugins>-->
-<!--                    &lt;!&ndash; Plugin para signing (si vas a publicar en Maven Central) &ndash;&gt;-->
-<!--                    <plugin>-->
-<!--                        <groupId>org.apache.maven.plugins</groupId>-->
-<!--                        <artifactId>maven-gpg-plugin</artifactId>-->
-<!--                        <version>3.1.0</version>-->
-<!--                        <executions>-->
-<!--                            <execution>-->
-<!--                                <id>sign-artifacts</id>-->
-<!--                                <phase>verify</phase>-->
-<!--                                <goals>-->
-<!--                                    <goal>sign</goal>-->
-<!--                                </goals>-->
-<!--                            </execution>-->
-<!--                        </executions>-->
-<!--                    </plugin>-->
-<!--                </plugins>-->
-<!--            </build>-->
-<!--        </profile>-->
-<!--    </profiles>-->
-
 </project>
