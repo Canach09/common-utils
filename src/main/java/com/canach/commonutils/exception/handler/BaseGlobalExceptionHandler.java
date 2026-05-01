@@ -8,34 +8,42 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 
 public abstract class BaseGlobalExceptionHandler {
 
     @ExceptionHandler(NoResourceFoundException.class)
-    public ResponseEntity<ErrorResponse> handleNotFound(NoResourceFoundException ex) {
-        final var error = new ErrorResponse(ErrorEnum.RESOURCE_NOT_FOUND.name(), ex.getMessage(), ErrorCategoryEnum.VALIDATION);
+    public ResponseEntity<ErrorResponse> handle(NoResourceFoundException ex) {
+        final var error = ErrorResponse.of(ErrorEnum.RESOURCE_NOT_FOUND.name(), ex.getMessage(), ErrorCategoryEnum.VALIDATION);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
-    public ResponseEntity<ErrorResponse> handleNotFound(HttpRequestMethodNotSupportedException ex) {
-        final var error = new ErrorResponse(ErrorEnum.METHOD_NOT_SUPPORTED.name(), ex.getMessage() + " for this path",
+    public ResponseEntity<ErrorResponse> handle(HttpRequestMethodNotSupportedException ex) {
+        final var error = ErrorResponse.of(ErrorEnum.METHOD_NOT_SUPPORTED.name(), ex.getMessage() + " for this path",
                 ErrorCategoryEnum.VALIDATION);
         return new ResponseEntity<>(error, HttpStatus.METHOD_NOT_ALLOWED);
     }
 
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<ErrorResponse> handle(MethodArgumentTypeMismatchException ex) {
+        final var error = ErrorResponse.of(ErrorEnum.INVALID_INPUT.name(), ex.getMessage(),
+                ErrorCategoryEnum.VALIDATION);
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(HttpMessageNotReadableException.class)
-    public ResponseEntity<ErrorResponse> handleNotFound(HttpMessageNotReadableException ex) {
-        final var error = new ErrorResponse(ErrorEnum.INVALID_INPUT.name(), ex.getMessage(),
+    public ResponseEntity<ErrorResponse> handle(HttpMessageNotReadableException ex) {
+        final var error = ErrorResponse.of(ErrorEnum.INVALID_INPUT.name(), ex.getMessage(),
                 ErrorCategoryEnum.VALIDATION);
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
 
 //    @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
 //    public ResponseEntity<ErrorResponse> handleNotFound(HttpRequestMethodNotSupportedException ex) {
-//        final var error = new ErrorResponse(ErrorEnum.METHOD_NOT_SUPPORTED.name(), ex.getMessage() + " for this path",
+//        final var error = ErrorResponse.of((ErrorEnum.METHOD_NOT_SUPPORTED.name(), ex.getMessage() + " for this path",
 //                ErrorCategoryEnum.VALIDATION);
 //        return new ResponseEntity<>(error, HttpStatus.METHOD_NOT_ALLOWED);
 //    }

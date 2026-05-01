@@ -1,8 +1,5 @@
 package com.canach.commonutils.exception.enums;
 
-import lombok.Getter;
-
-@Getter
 public enum ErrorEnum {
     RESOURCE_ALREADY_EXISTS("%s with id %s already exists"),
     BINDING_VALIDATION("binding error %s"),
@@ -20,6 +17,10 @@ public enum ErrorEnum {
 
     ErrorEnum(String description) {
         this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
 }

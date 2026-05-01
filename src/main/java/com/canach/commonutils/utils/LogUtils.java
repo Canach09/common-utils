@@ -1,12 +1,9 @@
 package com.canach.commonutils.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
-@Slf4j
 public final class LogUtils {
 
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -33,7 +30,7 @@ public final class LogUtils {
     }
 
     public static String GetStackTraceAsString(Throwable exception) {
-        StringWriter sw = new StringWriter();
+        final StringWriter sw = new StringWriter();
         exception.printStackTrace(new PrintWriter(sw));
         return sw.toString();
     }

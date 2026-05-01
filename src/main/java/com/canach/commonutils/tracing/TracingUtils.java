@@ -5,10 +5,13 @@ import io.opentelemetry.api.trace.Span;
 import io.opentelemetry.api.trace.StatusCode;
 import io.opentelemetry.api.trace.Tracer;
 import io.opentelemetry.context.Scope;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
+
 public final class TracingUtils {
+
+    private static final Logger log = LoggerFactory.getLogger(TracingUtils.class);
 
     public static void setNewSpanAttribute(String key, String value){
         Span.current().setAttribute(key, value);

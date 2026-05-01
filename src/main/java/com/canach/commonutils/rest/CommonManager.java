@@ -10,15 +10,17 @@ import com.canach.commonutils.tracing.LogLevel;
 import com.canach.commonutils.tracing.TracingUtils;
 import com.canach.commonutils.utils.LogUtils;
 import io.opentelemetry.api.trace.Tracer;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 //import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Slf4j
 public abstract class CommonManager {
+
+    private static final Logger log = LoggerFactory.getLogger(CommonManager.class);
 
     protected Tracer tracer;
 
@@ -59,7 +61,7 @@ public abstract class CommonManager {
             errorResponse = rnf.getErrorResponse();
             statusCode = HttpStatus.NOT_FOUND.value();
         } else {
-            errorResponse = new ErrorResponse(ErrorEnum.INTERNAL_ERROR.name(),
+            errorResponse = ErrorResponse.of(ErrorEnum.INTERNAL_ERROR.name(),
                     exc.getMessage(), ErrorCategoryEnum.INTERNAL);
             statusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
         }

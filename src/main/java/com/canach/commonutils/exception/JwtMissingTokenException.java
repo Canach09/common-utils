@@ -1,8 +1,5 @@
 package com.canach.commonutils.exception;
 
-import lombok.Getter;
-
-@Getter
 public class JwtMissingTokenException extends RuntimeException {
 
 
