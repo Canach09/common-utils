@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.canach09</groupId>
     <artifactId>common-utils</artifactId>
-    <version>1.0.18</version>
+    <version>1.0.19</version>
     <name>common-utils</name>
     <description>common utils</description>
 
@@ -15,7 +15,7 @@
         <maven.compiler.parameters>true</maven.compiler.parameters>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-        <spring-boot.version>4.0.6</spring-boot.version>
+        <spring-boot.version>3.5.14</spring-boot.version>
         <otel.version>2.17.1</otel.version>
     </properties>
 
