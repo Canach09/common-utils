@@ -1,26 +1,29 @@
 package com.canach.commonutils.exception.enums;
 
 public enum ErrorEnum {
-    RESOURCE_ALREADY_EXISTS("%s with id %s already exists"),
-    BINDING_VALIDATION("binding error %s"),
-    INVALID_QUERY_IDENTIFYING_VALUE("Valid identifiers types are: {%s}"),
-    INVALID_QUERY_IDENTIFYING_FORMAT("identifier format must be identifierType|value"),
-    INVALID_CREDENTIALS("invalid credentials"),
-    INTERNAL_ERROR("internal error occurred"),
-    RESOURCE_NOT_FOUND("%s with %s not found"),
-    UNAUTHORIZED("Unauthorized"),
-    INVALID_INPUT("invalid input: '%s'"),
-    BUSINESS_ERROR("business error: '%s'"),
-    METHOD_NOT_SUPPORTED("method not supported");
 
+    BINDING_VALIDATION(400, "binding error %s"),
+    INVALID_INPUT(400, "invalid input: '%s'"),
+    VALIDATION_ERROR(400, "validation error: '%s'"),
+    BUSINESS_ERROR(400, "business error: '%s'"),
+//    INVALID_QUERY_IDENTIFYING_VALUE(400, "valid identifiers types are: {%s}"),
+//    INVALID_QUERY_IDENTIFYING_FORMAT(400, "identifier format must be: identifierType|value"),
+    AUTHENTICATION_FAILED(401, "invalid credentials"),
+    FORBIDDEN(403, "operation not allowed"),
+    RESOURCE_NOT_FOUND(404, "%s with %s not found"),
+    METHOD_NOT_SUPPORTED(405, "method not supported"),
+    RESOURCE_ALREADY_EXISTS(409, "%s with id %s already exists"),
+    RESOURCE_IN_USE(409, "%s %s cannot be deleted: %s"),
+    INTERNAL_ERROR(500, "internal error occurred");
+
+    private final int httpStatus;
     private final String description;
 
-    ErrorEnum(String description) {
+    ErrorEnum(int httpStatus, String description) {
+        this.httpStatus = httpStatus;
         this.description = description;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
+    public int getHttpStatus() { return httpStatus; }
+    public String getDescription() { return description; }
 }
