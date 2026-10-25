@@ -6,6 +6,6 @@ import com.canach.commonutils.exception.enums.ErrorEnum;
 public class ForbiddenException extends InternalApiException {
 
         public ForbiddenException(ErrorEnum errorEnum, String message, ErrorCategoryEnum errorCategory) {
-        super(errorEnum.name(), message, errorCategory);
+        super(errorEnum, message, errorCategory);
     }
 }

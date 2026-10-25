@@ -6,6 +6,6 @@ import com.canach.commonutils.exception.enums.ErrorEnum;
 public class ResourceAlreadyExistsException extends InternalApiException {
 
         public ResourceAlreadyExistsException(ErrorEnum errorEnum, String message, ErrorCategoryEnum errorCategory) {
-        super(errorEnum.name(), message, errorCategory);
+        super(errorEnum, message, errorCategory);
     }
 }
