@@ -14,7 +14,7 @@ public class InternalApiException extends RuntimeException {
         errorResponse = ErrorResponse.of(errorCode, errorMessage, errorCategory);
     }
 
-    public ErrorResponse getErrorResponse() {
+    protected ErrorResponse getErrorResponse() {
         return errorResponse;
     }
 
